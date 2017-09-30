@@ -2,28 +2,7 @@
 #include <iostream>
 using namespace std;
 int matriz(int,int);
-int rellenar(char **z,int a, int b){
-    int  **ary= new int *[a];
-    for (int i=0;i<a;i++){
-        ary[i]=new int[b];
-    }
-    for (int i=0; i<a;i++){
-        for (int j=0; j<b;j++){
-            ary[i][j]=i;
-        }
-    }
-    for (int i=0;i<a;i++){
-        for(int j=0;j<b;j++){
-            cout<<" "<< ary[i][j]<<" ";
-        }
-        cout<<"\n"<<"\n";
-    }
-
-    for (int i=0;i<a;i++){
-        delete []ary[i];
-    delete []ary;
-    }
-    return 0;
+int bombas(char **x,int a, int b){
 
 
 }
@@ -31,6 +10,7 @@ int navegacion(char **z,int a, int b){
     int g,u;
     bool x=true;
         while (x){
+            cout<<"ingrese una posicion"<<"\n";
             cout<<"ingrese la fila";
             cin>>g;
             cout<<"ingrese la columna";
@@ -39,15 +19,15 @@ int navegacion(char **z,int a, int b){
             Sleep(2);
             system("CLS");
             x=false;
-            matriz(a,b);
+
         }
     for (int i=0;i<a;i++){
         for(int j=0;j<b;j++){
-            cout<<" "<< ary[i][j]<<" ";
+            cout<<" "<< z[i][j]<<" ";
 
         }
         cout<<"\n"<<"\n";
-     
+
     }
 }
 int matriz(int a, int b){
@@ -61,14 +41,13 @@ int matriz(int a, int b){
         }
     }
 
-    for (int i=0;i<a;i++){
+    /*for (int i=0;i<a;i++){
         for(int j=0;j<b;j++){
             cout<<" "<< ary[i][j]<<" ";
-
         }
         cout<<"\n"<<"\n";
-     
-    }
+    }*/
+
     navegacion(ary,a,b);
     for (int i=0;i<a;i++){
         delete []ary[i];
@@ -84,30 +63,10 @@ cout<<"ingrese numero de filas:"<<" ";
 cin>>N;
 cout<<"ingres el numero de columnas:"<<" ";
 cin>>M;
-//matriz(N,M);
-//while (z){
-    matriz(N,M);
-    //Sleep(20);
-    //system("CLS");
-    //rellenar(N,M);
-
-//}
- /* while (z){
-        z=false;
-    cin>>a;
-    cin>>b;
-    for (int i=0;i<N;++i){
-        for (int j=0;j<N;++j){
-            if(a==i && b==j){
-                ary[i][j]='@';
-                z=true;
-            }
-            else{
-                z=false;
-            }
-        }
+    while(z){
+            matriz(N,M);
     }
-  }*/
 
   return 0;
 }
+
